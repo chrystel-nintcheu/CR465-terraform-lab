@@ -1,0 +1,11 @@
+prompts/
+build/
+logs/
+results/
+terraform/.terraform/
+terraform/generated/
+
+# Terraform state — never commit; use a remote backend in production
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl

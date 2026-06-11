@@ -1,0 +1,92 @@
+lab:
+  name: CR465 Terraform Multipass Lab
+  mode: bilingual
+  primary_os: Windows
+  structure_parity: required
+  handoff_fields:
+    - goal
+    - inputs
+    - outputs
+    - decisions
+    - validation_status
+    - open_issues
+  validation_order:
+    - repository_prerequisites
+    - contract_files
+    - terraform_and_cloud_init_independent
+    - integrated_single_vm_path
+    - runners_and_tests
+    - bilingual_documentation_parity
+    - full_tutorial_execution
+    - teardown_and_reset_twice
+  steps:
+    - id: 1
+      title: Establish tutorial contract
+      done_when:
+        - contract documented
+        - handoff template documented
+        - bilingual structure rules documented and agreed
+      recovery:
+        - revise the contract locally
+        - revalidate before moving on
+    - id: 2
+      title: Smallest runnable Terraform target
+      done_when:
+        - terraform initializes
+        - terraform validates
+        - one Multipass VM target is defined
+      recovery:
+        - fix the terraform surface only
+        - rerun init and validate
+    - id: 3
+      title: Isolated cloud-init layer
+      done_when:
+        - cloud-init parses independently
+        - integrated terraform plan still validates
+      recovery:
+        - repair cloud-init content first
+        - then revalidate integration
+    - id: 4
+      title: Execution wrappers and reset behavior
+      done_when:
+        - student runner works
+        - teacher validation runner works
+        - reset flow works without manual intervention
+      recovery:
+        - repair the wrapper scripts
+        - verify against the single VM path
+    - id: 5
+      title: Full pedagogical sequence
+      done_when:
+        - full sequence runs in order
+        - every step has its own handoff
+        - any step can be resumed from its handoff
+      recovery:
+        - restore the current checkpoint only
+        - avoid a full reset unless state is corrupted
+    - id: 6
+      title: Bilingual documentation and GitBook source
+      done_when:
+        - english and french docs are structurally aligned
+        - gitbook source mirrors the tutorial progression
+        - recovery paths are explicit
+      recovery:
+        - fix document parity drift first
+        - keep docs aligned with executable behavior
+    - id: 7
+      title: Staged validation
+      done_when:
+        - dependency checks pass
+        - step-level checks pass
+        - end-to-end checks pass
+      recovery:
+        - rerun the narrowest failing layer
+        - do not advance a broken layer
+    - id: 8
+      title: Hardening pass
+      done_when:
+        - repeated execution is stable
+        - no unexplained drift remains
+      recovery:
+        - correct drift in the smallest affected area
+        - re-run validation twice

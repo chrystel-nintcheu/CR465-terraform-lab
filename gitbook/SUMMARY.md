@@ -1,0 +1,21 @@
+# Summary
+
+- [Overview](README.md)
+- English
+  - [Step 1: Contract](en/step-01-contract.md)
+  - [Step 2: Smallest Terraform target](en/step-02-smallest-terraform-target.md)
+  - [Step 3: Isolated cloud-init](en/step-03-isolated-cloud-init.md)
+  - [Step 4: Wrappers and reset](en/step-04-wrappers-and-reset.md)
+  - [Step 5: Full sequence](en/step-05-full-sequence.md)
+  - [Step 6: Docs and GitBook](en/step-06-docs-and-gitbook.md)
+  - [Step 7: Staged validation](en/step-07-staged-validation.md)
+  - [Step 8: Hardening](en/step-08-hardening.md)
+- Français
+  - [Étape 1 : Contrat](fr/etape-01-contrat.md)
+  - [Étape 2 : Cible Terraform minimale](fr/etape-02-cible-terraform-minimale.md)
+  - [Étape 3 : cloud-init isolé](fr/etape-03-cloud-init-isole.md)
+  - [Étape 4 : Wrappers et reset](fr/etape-04-wrappers-et-reset.md)
+  - [Étape 5 : Séquence complète](fr/etape-05-sequence-complete.md)
+  - [Étape 6 : Docs et GitBook](fr/etape-06-docs-et-gitbook.md)
+  - [Étape 7 : Validation par paliers](fr/etape-07-validation-par-paliers.md)
+  - [Étape 8 : Durcissement](fr/etape-08-durcissement.md)

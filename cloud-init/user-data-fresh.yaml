@@ -1,0 +1,15 @@
+#cloud-config
+package_update: true
+package_upgrade: false
+packages:
+  - git
+  - curl
+write_files:
+  - path: /etc/cr465-fresh.txt
+    permissions: '0644'
+    content: |
+      CR465 Terraform Multipass Lab — standalone cloud-init provisioner
+      Managed by cloud-init/provision-multipass.ps1 (not Terraform)
+runcmd:
+  - echo 'CR465 standalone lab ready' > /var/tmp/cr465-lab-ready.txt
+  - echo "Provisioned at $(date --utc)" >> /var/tmp/cr465-lab-ready.txt

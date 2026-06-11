@@ -1,0 +1,18 @@
+#cloud-config
+package_update: true
+package_upgrade: false
+packages:
+  - git
+  - curl
+write_files:
+  - path: /etc/cr465-lab.txt
+    permissions: '0644'
+    content: |
+      CR465 Terraform Multipass Lab
+      Hostname  : ${hostname}
+      Lab stage : ${lab_stage}
+      Provider  : todoroff/multipass
+      Managed by Terraform - run `terraform output` on the host to see the VM IP.
+runcmd:
+  - echo 'CR465 lab ready' > /var/tmp/cr465-lab-ready.txt
+  - echo "Provisioned at $(date --utc)" >> /var/tmp/cr465-lab-ready.txt
